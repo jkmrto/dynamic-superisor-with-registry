@@ -1,4 +1,4 @@
-defmodule DynamicSupervisorExample.MixProject do
+defmodule DynamicSupervisorWithRegistry.MixProject do
   use Mix.Project
 
   def project do
@@ -14,7 +14,7 @@ defmodule DynamicSupervisorExample.MixProject do
   # Run "mix help compile.app" to learn about applications.
   def application do
     [
-      mod: {DynamicSupervisorExample, []},
+      mod: {DynamicSupervisorWithRegistry, []},
       extra_applications: [:logger]
     ]
   end

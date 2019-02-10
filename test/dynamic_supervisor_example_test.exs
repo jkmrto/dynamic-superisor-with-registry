@@ -1,8 +1,8 @@
-defmodule DynamicSupervisorExampleTest do
+defmodule DynamicSupervisorWithRegistryTest do
   use ExUnit.Case
-  doctest DynamicSupervisorExample
+  doctest DynamicSupervisorWithRegistry
 
   test "greets the world" do
-    assert DynamicSupervisorExample.hello() == :world
+    assert DynamicSupervisorWithRegistry.hello() == :world
   end
 end

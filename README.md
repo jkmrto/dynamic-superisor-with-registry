@@ -1,21 +1,38 @@
-# DynamicSupervisorExample
+# DynamicSupervisorWithRegistry
 
-**TODO: Add description**
+Dynamic Supervisor with Registry simple example.
 
 ## Installation
-
-If [available in Hex](https://hex.pm/docs/publish), the package can be installed
-by adding `dynamic_supervisor_example` to your list of dependencies in `mix.exs`:
-
-```elixir
-def deps do
-  [
-    {:dynamic_supervisor_example, "~> 0.1.0"}
-  ]
-end
+```
+mix deps.get
+mix deps.compile
+mix compile
 ```
 
-Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
-and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
-be found at [https://hexdocs.pm/dynamic_supervisor_example](https://hexdocs.pm/dynamic_supervisor_example).
+## To run in interactve mode
 
+``` Bash
+iex -S mix
+```
+
+Start three workers:
+
+```Elxir
+alias DynamicSupervisorWithRegistry.WorkersSupervisor
+WorkersSupervisor.start_child("worker_1")
+WorkersSupervisor.start_child("worker_2")
+WorkersSupervisor.start_child("worker_3")
+:observer.start()
+```
+
+Stopping worker:
+```
+alias DynamicSupervisorWithRegistry.Worker
+Worker.stop("worker_1")
+```
+
+Crashing a worker:
+```
+alias DynamicSupervisorWithRegistry.Worker
+Worker.crash("worker_2")
+```
